@@ -6,7 +6,7 @@ class GetApiContent:
   """
   Class responsible for get pokemon information from PokeAPI.
   """
-  def pokemon_data_list(POKE_API_URL: str):
+  def poke_data_list(POKE_API_URL: str):
     """
     Method to get information about the first pokemon generation.
 

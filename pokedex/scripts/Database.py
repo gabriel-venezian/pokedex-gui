@@ -1,15 +1,12 @@
 import sqlite3
-from pathlib import Path
+from Constants import Constants
 from GetApiContent import GetApiContent
 
-
-ROOT_PATH = Path(__file__).parent.parent
-POKE_API_URL = 'https://pokeapi.co/api/v2/pokemon'
 
 class Database:
   def __init__(self):
     # Connect to sqlite database
-    self.connection = sqlite3.connect(f'{ROOT_PATH}/../pokedex.db')
+    self.connection = sqlite3.connect(f'{Constants.ROOT_PATH()}/../pokedex.db')
     # Create the cursor object
     self.cursor = self.connection.cursor()
     
@@ -28,8 +25,8 @@ class Database:
     return print('Database created.')
     
   def store_in_database(self):
-    pokemon_data_list = GetApiContent.pokemon_data_list(POKE_API_URL)
-    for pokemon in pokemon_data_list:
+    poke_data_list = GetApiContent.poke_data_list(Constants.POKE_API_URL())
+    for pokemon in poke_data_list:
       poke_id = pokemon[0]
       poke_name = pokemon[1]
       poke_image = pokemon[2]
@@ -42,7 +39,10 @@ class Database:
         ''', (poke_id, poke_name, poke_image, poke_type))
     return print('Pokemon information loaded.')
 
-test = Database()
-test.create_database()
-test.store_in_database()
-  
+  def database_content(self, query):
+    database_content = []
+    with self.connection:
+      db_content = self.cursor.execute(query)
+    for row in db_content:
+      database_content.append(row)
+    return database_content
