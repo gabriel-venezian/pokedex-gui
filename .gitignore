@@ -1,6 +1,0 @@
-# Ignore CSV and DB files
-*.csv
-*.db
-
-# Ignore pycache
-**/__pycache__/
