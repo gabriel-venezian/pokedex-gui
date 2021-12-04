@@ -21,7 +21,7 @@ Clone this repository. With **python** and **pip** installed, install the depend
 $ pip install -r requirements.txt
 ```
 
-Then you are able to run the application from `main.py`.
+Run the application from `main.py`.
 
 ## License
 
