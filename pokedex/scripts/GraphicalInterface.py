@@ -13,7 +13,17 @@ window.title('Pokédex')
 window.configure(background = '#f6e652')
 
 class GraphicalInterface():
+  """
+  Class responsible for the definition of Graphical
+  User Interface properties.
+  """
   def __init__(self, window):
+    """
+    GraphicalInterface class constructor.
+
+    Contains the properties used for generate the graphical
+    user interface.
+    """
     self.title_label = tk.Label(window, text='Pokédex', background='#f6e652')
     self.title_label.config(font=('"Orange Kid" 64 bold'), fg='#41414a')
     self.title_label.pack(padx=10, pady=10)
@@ -43,7 +53,16 @@ class GraphicalInterface():
 
   # Function to load pokemon
   def load_pokemon(self):
+    """
+    Method for load the pokémon information in the
+    graphical user interface.
+
+    Gets the text inputed from user and executes a query
+    in the database, returning a single row of information.
+    """
+    # Instantiate Database class
     database = Database()
+
     # Get the inputed information
     poke_search = self.text_id_name.get(1.0, 'end-1c')
 
@@ -57,7 +76,7 @@ class GraphicalInterface():
         poke_image = poke_data[2]
         poke_type = poke_data[3]
       
-        # Image
+        # Render image
         http = urllib3.PoolManager()
         img = http.request('GET', poke_image)
         image = Image.open(BytesIO(img.data))
@@ -72,5 +91,8 @@ class GraphicalInterface():
       pass
 
   def start_gui():
+    """
+    Method for start the graphical user interface.
+    """
     GraphicalInterface(window)
     window.mainloop()  
