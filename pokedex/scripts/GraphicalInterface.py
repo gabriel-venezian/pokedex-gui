@@ -8,7 +8,7 @@ from Database import Database
 
 
 window = tk.Tk()
-window.geometry('1920x1080')
+window.geometry('825x1068')
 window.title('Pokédex')
 window.configure(background = '#f6e652')
 
