@@ -15,7 +15,7 @@ Get information about your favorite pokémon using [PokeApi](https://pokeapi.co/
 
 ## Running
 
-Clone this repository. With **python** and pip **installed**, install the dependencies with:
+Clone this repository. With **python** and **pip** installed, install the dependencies with:
 
 ```sh
 $ pip install -r requirements.txt
