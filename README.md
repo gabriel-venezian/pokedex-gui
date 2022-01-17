@@ -2,7 +2,7 @@
 
 ![screenshot](./pokedex/img/screenshot.png?raw=true "screenshot")
 
-Get information about your favorite pokémon using [PokeApi](https://pokeapi.co/).
+Get information about your favorite pokémon using [PokéApi](https://pokeapi.co/).
 
 ## Functions
 
