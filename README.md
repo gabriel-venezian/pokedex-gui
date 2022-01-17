@@ -7,7 +7,7 @@
   </tr>
 </table>
 
-Get information about your favorite pokémon using [PokéAPI](https://pokeapi.co/).
+Graphical User Interface to get pokémon information using [PokéAPI](https://pokeapi.co/).
 
 ## Functions
 
