@@ -1,9 +1,11 @@
 # Pokédex GUI
 
-<div width="100%">
-  <img src="./pokedex/img/screenshot.png" alt="Pokédex GUI project screenshot." width="48.9%">
-  <img src="./pokedex/img/screenshot.png" alt="Pokédex GUI project screenshot." width="48.9%" align="right">
-</div>
+<table>
+  <tr>
+    <td><img src="./pokedex/img/screenshot.png" alt="Pokédex GUI project screenshot." width="100%"></td>
+    <td><img src="./pokedex/img/screenshot.png" alt="Pokédex GUI project screenshot." width="100%"></td>
+  </tr>
+</table>
 
 Get information about your favorite pokémon using [PokéAPI](https://pokeapi.co/).
 
