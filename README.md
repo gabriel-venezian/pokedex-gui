@@ -2,8 +2,8 @@
 
 <table>
   <tr>
-    <td><img src="./pokedex/img/screenshot.png" alt="Pokédex GUI project screenshot." width="100%"></td>
-    <td><img src="./pokedex/img/screenshot.png" alt="Pokédex GUI project screenshot." width="100%"></td>
+    <td><img src="./pokedex/img/screenshot_gengar.png" alt="Pokédex GUI project screenshot." width="100%"></td>
+    <td><img src="./pokedex/img/screenshot_nidorino.png" alt="Pokédex GUI project screenshot." width="100%"></td>
   </tr>
 </table>
 
