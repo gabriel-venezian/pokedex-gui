@@ -1,4 +1,4 @@
-# Pokédex API
+# Pokédex GUI
 
 ![screenshot](./pokedex/img/screenshot.png?raw=true "screenshot")
 
