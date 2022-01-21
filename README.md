@@ -24,4 +24,4 @@ $ pip install -r requirements.txt
 Run the application from `main.py`.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/gabriel-venezian/my-etl/blob/main/LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/gabriel-venezian/pokedex-gui/blob/main/LICENSE.md) file for details.
