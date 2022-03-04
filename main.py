@@ -1,10 +1,10 @@
 import sys
-sys.path.insert(0, 'pokedex/scripts')
-from pokedex.scripts.Constants import Constants
-from pokedex.scripts.CsvExport import CsvExport
-from pokedex.scripts.Database import Database
-from pokedex.scripts.GetApiContent import GetApiContent
-from pokedex.scripts.GraphicalInterface import GraphicalInterface
+sys.path.insert(0, 'pokedex/classes')
+from pokedex.classes.Constants import Constants
+from pokedex.classes.CsvExport import CsvExport
+from pokedex.classes.Database import Database
+from pokedex.classes.GetApiContent import GetApiContent
+from pokedex.classes.GraphicalInterface import GraphicalInterface
 
 
 # Instantiate Database class
