@@ -21,7 +21,10 @@ Clone this repository. With **python** and **pip** installed, install the depend
 ```sh
 $ pip install -r requirements.txt
 ```
-Run the application from `main.py`.
+Run the application from the root folder using:
+```sh
+$ python -m pokedex
+```
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/gabriel-venezian/pokedex-gui/blob/main/LICENSE.md) file for details.
