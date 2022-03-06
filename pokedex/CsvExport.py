@@ -1,6 +1,6 @@
 import csv
 from pathlib import Path
-from Constants import Constants
+from .Constants import Constants
 
 
 class CsvExport:

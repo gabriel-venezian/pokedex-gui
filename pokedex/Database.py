@@ -1,6 +1,6 @@
 import sqlite3
-from Constants import Constants
-from GetApiContent import GetApiContent
+from .Constants import Constants
+from .GetApiContent import GetApiContent
 
 
 class Database:
@@ -70,3 +70,12 @@ class Database:
             VALUES (?, ?, ?, ?)
           ''', (poke_id, poke_name, poke_image, poke_type))
     return print('Pokémon information loaded.')
+
+  def pokemon_data(self, poke_search):
+    self.cursor.execute('SELECT * FROM pokedex WHERE id = ? OR name LIKE ?;', (poke_search, f'%{poke_search}%',))
+    
+    poke_data = self.cursor.fetchone()
+
+    if poke_data:
+      return poke_data
+    
