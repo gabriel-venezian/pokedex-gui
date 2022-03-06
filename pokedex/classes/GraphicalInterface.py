@@ -11,7 +11,7 @@ from Database import Database
 window = tk.Tk()
 window.geometry(f'{window.winfo_screenwidth() // 2}x{window.winfo_screenheight()}')
 window.title('Pokédex GUI')
-window.configure(background = '#f6e652')
+window.configure(background = '#111111')
 
 class GraphicalInterface():
   """
@@ -25,28 +25,28 @@ class GraphicalInterface():
     Contains the properties used for generate the graphical
     user interface.
     """
-    self.title_label = tk.Label(window, text='POKÉDEX', background='#f6e652')
-    self.title_label.config(font=('"Kanit" 48 bold'), fg='#41414a')
+    self.title_label = tk.Label(window, text='POKÉDEX', background='#111111')
+    self.title_label.config(font=('"Kanit" 48 bold'), fg='#EDEDED')
     self.title_label.place(relx=0.5, rely=0.07, anchor='center')
 
-    self.pokemon_image = tk.Label(window, background='#f6e652')
+    self.pokemon_image = tk.Label(window, background='#111111')
     self.pokemon_image.place(relx=0.5, rely=0.35, anchor='center')
 
-    self.pokemon_information = tk.Label(window, background='#f6e652')
-    self.pokemon_information.config(font=('"Roboto" 36 bold'), fg='#41414a')
+    self.pokemon_information = tk.Label(window, background='#111111')
+    self.pokemon_information.config(font=('"Roboto" 36 bold'), fg='#EDEDED')
     self.pokemon_information.place(relx=0.5, rely=0.62, anchor='center')
 
-    self.pokemon_types = tk.Label(window, background='#f6e652')
-    self.pokemon_types.config(font=('"Roboto" 36 bold'), fg='#41414a')
+    self.pokemon_types = tk.Label(window, background='#111111')
+    self.pokemon_types.config(font=('"Roboto" 36 bold'), fg='#EDEDED')
     self.pokemon_types.place(relx=0.5, rely=0.69, anchor='center')
 
-    self.text_id_name = tk.Text(window, height=1, width=35, bg='#ffffff', fg='#41414a', padx=10, pady=10)
-    self.text_id_name.config(font=('"Roboto" 24'), fg='#41414a')
-    self.text_id_name.insert(1.0, "Pokédex number or pokémon name...")
+    self.text_id_name = tk.Text(window, height=1, width=35, bg='#EDEDED', fg='#111111', padx=10, pady=10)
+    self.text_id_name.config(font=('"Roboto" 24'), fg='#111111')
+    self.text_id_name.insert(1.0, 'Pokédex number or pokémon name...')
     self.text_id_name.place(relx=0.5, rely=0.8, anchor='center')
 
     self.btn_load = tk.Button(window, text='SEARCH', command=self.load_pokemon)
-    self.btn_load.config(font=('"Kanit" 24 bold'), fg='#41414a')
+    self.btn_load.config(font=('"Kanit" 24 bold'), fg='#111111')
     self.btn_load.place(relx=0.5, rely=0.9, anchor='center')
 
   # Function to load pokemon
@@ -81,11 +81,13 @@ class GraphicalInterface():
         resize_img = image.resize((350, 350))
         poke_img = ImageTk.PhotoImage(resize_img)
         
-        self.pokemon_image.config(image=poke_img, background='#f6e652')
+        self.pokemon_image.config(image=poke_img, background='#111111')
         self.pokemon_image.image = poke_img
 
         self.pokemon_information.config(text=f'#{poke_id} {poke_name.capitalize()}')
         self.pokemon_types.config(text=f'{poke_type.capitalize()}')
+
+        self.text_id_name.delete(1.0, 'end')
     except TypeError:
       pass
 
