@@ -1,5 +1,3 @@
-import sys
-sys.path.insert(0, 'pokedex/')
 from pokedex import Constants
 from pokedex import CsvExport
 from pokedex import Database

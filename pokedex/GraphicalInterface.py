@@ -1,5 +1,3 @@
-import sys
-sys.path.insert(0, 'pokedex')
 import tkinter as tk
 import urllib3 
 from io import BytesIO
