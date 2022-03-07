@@ -4,6 +4,7 @@ from io import BytesIO
 from PIL import Image, ImageTk
 from .Database import Database
 
+
 class GraphicalInterface(tk.Tk):
   """
   Class responsible for the definition of Graphical
