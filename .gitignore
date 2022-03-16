@@ -4,3 +4,4 @@
 
 # Ignore pycache
 **/__pycache__/
+venv
