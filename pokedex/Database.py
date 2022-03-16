@@ -18,7 +18,7 @@ class Database:
     # Create the cursor object
     self.cursor = self.connection.cursor()
     
-  def create_database(self):
+  def create(self):
     """
     Method for create the database and also the application main
     table.
@@ -34,42 +34,35 @@ class Database:
             PRIMARY KEY(ID)
           );
       ''')
-    return print('Database created.')
+    return 'Database created.'
       
-  def database_content(self, query):
+  def content(self, query):
     """
-    Method for select information from the database.
+    Method for select content from the database.
 
     Args:
     query (string): expects a query string to be executed.
     """
-    database_content = []
     with self.connection:
       db_content = self.cursor.execute(query)
-    for row in db_content:
-      database_content.append(row)
-    return database_content
+    return list(db_content)
 
-  def store_in_database(self):
+  def insert_pokemon(self):
     """
     Method for insert information in the database.
 
     Verifies if the table is empty before it's insertion.
     """
-    if (self.database_content('SELECT * FROM pokedex')) == []:
-      poke_data_list = GetApiContent.poke_data_list(Constants.POKE_API_URL())
-      for pokemon in poke_data_list:
-        poke_id = pokemon[0]
-        poke_name = pokemon[1]
-        poke_image = pokemon[2]
-        poke_type = pokemon[3]
-        with self.connection:
-          self.cursor.execute('''
-            INSERT INTO
-              pokedex
-            VALUES (?, ?, ?, ?)
-          ''', (poke_id, poke_name, poke_image, poke_type))
-    return print('Pokémon information loaded.')
+    if len(self.content('SELECT * FROM pokedex')) == 0:
+      pokemons = GetApiContent.poke_data_list(Constants.POKE_API_URL)
+      payload = [(pokemon.id, pokemon.name, pokemon.image, pokemon.type) for pokemon in pokemons]
+      with self.connection:
+        self.cursor.executemany('''
+          INSERT INTO
+            pokedex
+          VALUES (?, ?, ?, ?)
+        ''', payload)
+    return 'Pokémon information loaded.'
 
   def pokemon_data(self, poke_search):
     self.cursor.execute('SELECT * FROM pokedex WHERE id = ? OR name LIKE ?;', (poke_search, f'%{poke_search}%',))    
