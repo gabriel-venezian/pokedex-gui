@@ -20,8 +20,8 @@ class CsvExport:
 
     Verifies if the file already exists before it's creation.
     """
-    if (Path(f'{Constants.ROOT_PATH()}/../{file_name}').is_file()) == False:
-      with open(f'{Constants.ROOT_PATH()}/../{file_name}', 'w', encoding='UTF-8', newline='') as f:
+    if (Path(f'{Constants.ROOT_PATH}/{file_name}').is_file()) == False:
+      with open(f'{Constants.ROOT_PATH}/{file_name}', 'w', encoding='UTF-8', newline='') as f:
         writer = csv.writer(f, delimiter=';')
         writer.writerow(['ID', 'NAME', 'IMAGE', 'TYPE'])
         for row in content_from:

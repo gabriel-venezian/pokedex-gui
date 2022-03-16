@@ -14,7 +14,7 @@ class Database:
     Contains the connection and cursor objects from sqlite3.
     """
     # Connect to sqlite database
-    self.connection = sqlite3.connect(f'{Constants.ROOT_PATH()}/../pokedex.db')
+    self.connection = sqlite3.connect(f'{Constants.ROOT_PATH}/pokedex.db')
     # Create the cursor object
     self.cursor = self.connection.cursor()
     
