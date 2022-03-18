@@ -1,3 +1,4 @@
 Pillow==9.0.1
-requests==2.27.1
-urllib3==1.26.2
+pydantic==1.9.0
+requests==2.22.0
+urllib3==1.25.8
